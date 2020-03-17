@@ -1,0 +1,17 @@
+{
+    "name": "jmartz-gmbh/robo-config",
+    "description": "Robo Plugin for Config Managment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jonathan-martz",
+            "email": "github@jmartz.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"JmartzGmbh\\": "src/"}
+    },
+    "require": {
+
+    }
+}
