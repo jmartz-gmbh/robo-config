@@ -12,6 +12,7 @@
         "psr-4": {"JmartzGmbh\\": "src/"}
     },
     "require": {
-
+        "php": "^7.3|^7.4",
+        "ext-json": "*"
     }
 }
