@@ -13,9 +13,12 @@ trait RoboConfig
     public function ConfigLoad(): array
     {
         $this->stopOnFail(true);
-        $filename = 'deployment-config.json';
+        $filename = 'anton-config.json';
+        if(!file_exists($filename)){
+            throw new \Exception($filename. ' doesnt exists.');
+        }
         $file = file_get_contents($filename);
-        return (array)json_decode($file);
+        return (array)json_decode($file, true);
     }
 
     /**
@@ -24,7 +27,11 @@ trait RoboConfig
     public function ConfigSave(array $config)
     {
         $this->stopOnFail(true);
-        $filename = 'deployment-config.json';
+        $filename = 'anton-config.json';
+        if(!file_exists($filename)){
+            throw new \Exception($filename. ' doesnt exists.');
+        }
+
         file_put_contents($filename, json_encode($config, JSON_FORCE_OBJECT));
     }
 }
