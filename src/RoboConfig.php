@@ -10,10 +10,10 @@ trait RoboConfig
     /**
      * @return array
      */
-    public function ConfigLoad(): array
+    public function ConfigLoad(string $filename): array
     {
         $this->stopOnFail(true);
-        $filename = 'anton-config.json';
+        $filename .= '.json';
         if(!file_exists($filename)){
             throw new \Exception($filename. ' doesnt exists.');
         }
@@ -24,10 +24,10 @@ trait RoboConfig
     /**
      * @param array $config
      */
-    public function ConfigSave(array $config)
+    public function ConfigSave(string $filename, array $config)
     {
         $this->stopOnFail(true);
-        $filename = 'anton-config.json';
+        $filename .= '.json';
         if(!file_exists($filename)){
             throw new \Exception($filename. ' doesnt exists.');
         }
